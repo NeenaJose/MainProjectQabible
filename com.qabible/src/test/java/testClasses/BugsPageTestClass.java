@@ -1,5 +1,7 @@
 package testClasses;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -7,6 +9,7 @@ import baseClass.BaseClass;
 import pageClasses.BugsPageClass;
 import pageClasses.DashboardPageClass;
 import pageClasses.LoginPageClass;
+import utilities.ExcelReadUtility;
 import utilities.RandomDataUtility;
 
 public class BugsPageTestClass extends BaseClass{
@@ -15,9 +18,9 @@ public class BugsPageTestClass extends BaseClass{
 	LoginPageClass lp;
 	
 	@Test
-	public void verifybugAddition() {
+	public void verifybugAddition() throws IOException {
 	    lp = new LoginPageClass(driver);
-	    lp.login("admin", "123456");
+		dp=lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
 
 	    dp = new DashboardPageClass(driver);
 	    dp.bugClick();
@@ -30,6 +33,12 @@ public class BugsPageTestClass extends BaseClass{
 
 	    Assert.assertTrue(bp.isBugPresent(bugTitle), "Bug was not added successfully");
 	}
+	
+
+	
+
+	
+	
 
   }
 

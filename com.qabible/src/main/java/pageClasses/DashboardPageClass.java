@@ -40,13 +40,16 @@ public String getDashboardUrl() {
 	
 }
 
-public void calenderClick() {
-	wu.waitForElementToBeClickableByWebElement(driver,calender , 5);
-	calender.click();
+public CalenderPageClass calenderClick() {
+    wu.waitForElementToBeClickableByWebElement(driver, calender, 5);
+    calender.click();
+    return new CalenderPageClass(driver);
 }
-public void bugClick() {
+
+public BugsPageClass bugClick() {
 	wu.waitForElementToBeClickableByWebElement(driver,bug , 5);
 	bug.click();
+	return new BugsPageClass(driver);
 	
 }
 

@@ -1,6 +1,9 @@
 package baseClass;
 
 import org.testng.annotations.Test;
+
+import constants.ConstantsClass;
+
 import org.testng.annotations.BeforeMethod;
 
 import java.io.FileInputStream;
@@ -26,11 +29,12 @@ public class BaseClass {
 	}
 	
   @BeforeMethod
-  public void beforeMethod() {
+  public void beforeMethod() throws IOException {
+	  readProperty();
 	  driver = new ChromeDriver();
 	  driver.manage().window().maximize();
-	  driver.get("https://erp.qabible.in/login");
-	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	  driver.get(property.getProperty("baseurl"));
+	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConstantsClass.implicitWaitTimeout));
   }
 
   @AfterMethod

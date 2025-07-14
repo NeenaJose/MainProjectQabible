@@ -28,14 +28,12 @@ public class LoginPageClass {
 	@FindBy(xpath = "//label[contains(.,'Remember Me')]") WebElement rememberMe;
 	@FindBy(name = "remember") WebElement checkbox;
 	
-	public void login(String uname,String pass) {
+	public DashboardPageClass login(String uname,String pass) {
 		username.sendKeys(uname);
 		password.sendKeys(pass);
 		wu.waitForElementToBeClickableByWebElement(driver, signin, 5);
 		signin.click();
-		
-		
-		
+		return new DashboardPageClass(driver);	
 	}
 	
 	public String getTextOfErrorMessage() {

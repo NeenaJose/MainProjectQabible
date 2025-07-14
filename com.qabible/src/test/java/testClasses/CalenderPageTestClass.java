@@ -18,7 +18,7 @@ public class CalenderPageTestClass extends BaseClass{
   @Test
   public void verifyCalenderTitle() throws IOException {
 	  lp=new LoginPageClass(driver);
-	  lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
+	  dp=lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
 	  dp=new DashboardPageClass(driver);
 	  dp.calenderClick();
 	  cp = new CalenderPageClass(driver);

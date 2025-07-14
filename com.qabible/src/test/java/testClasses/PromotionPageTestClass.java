@@ -22,7 +22,7 @@ public class PromotionPageTestClass extends BaseClass{
   @Test
   public void verifyPromotionMenuIsClickable() throws IOException {
 	  lp=new LoginPageClass(driver);
-	  lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
+	  dp=lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
 	  pp=new PromotionPageClass(driver);
 	  pp.promotionClick();
 	  Assert.assertTrue(pp.isPromotionHeaderVisible(), "❌ Promotion menu did not load properly");
@@ -32,7 +32,7 @@ public class PromotionPageTestClass extends BaseClass{
   @Test
   public void verifyAddPromotion() throws IOException {
       lp = new LoginPageClass(driver);
-      lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
+  	  dp=lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
 
       pp = new PromotionPageClass(driver);
       pp.promotionClick();

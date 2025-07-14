@@ -17,8 +17,7 @@ public class LoginPageTestClass extends BaseClass {
 	@Test
 	public void verifySuccessfullLogin() throws IOException {
 		lp=new LoginPageClass(driver);
-		lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-		dp=new DashboardPageClass(driver);
+		dp=lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
 		String actualResult=dp.getTextOfDashboard();
 		Assert.assertEquals(actualResult, "Dashboard");
 		System.out.println(actualResult);
