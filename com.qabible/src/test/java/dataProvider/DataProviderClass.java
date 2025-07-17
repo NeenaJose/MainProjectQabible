@@ -14,10 +14,6 @@ public class DataProviderClass {
   @DataProvider(name="unsuccessfullLogin")
   public Object[][] dp() throws IOException {
     return new Object[][] {
-  
-   /*   new Object[] { "admin", "admin123" },
-      	new Object[] { "admin123", "123456" },
-      	new Object[] { "admin123", "admin123" },*/
     	
     	 new Object[] { ExcelReadUtility.getStringData(1, 0, "LoginPage"), ExcelReadUtility.getStringData(1, 1, "LoginPage") },
          new Object[] { ExcelReadUtility.getStringData(2, 0, "LoginPage"), ExcelReadUtility.getIntData(2, 1, "LoginPage") },

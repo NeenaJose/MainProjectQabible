@@ -3,16 +3,18 @@
 <suite name="Failed suite [TestSuite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="retry.RetryListener"/>
+    <listener class-name="extentReport.TestListener"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testClasses.BugsPageTestClass">
+      <class name="testClasses.LoginPageTestClass">
         <methods>
           <include name="afterMethod"/>
+          <include name="verifySuccessfullLogin"/>
+          <include name="createReport"/>
           <include name="beforeMethod"/>
-          <include name="verifybugAddition"/>
         </methods>
-      </class> <!-- testClasses.BugsPageTestClass -->
+      </class> <!-- testClasses.LoginPageTestClass -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [TestSuite] -->

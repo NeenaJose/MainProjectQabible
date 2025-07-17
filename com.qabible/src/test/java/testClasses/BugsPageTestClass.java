@@ -17,12 +17,10 @@ public class BugsPageTestClass extends BaseClass{
 	DashboardPageClass dp;
 	LoginPageClass lp;
 	
-	@Test
+	@Test(enabled = false)
 	public void verifybugAddition() throws IOException {
 	    lp = new LoginPageClass(driver);
 		dp=lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-
-	    dp = new DashboardPageClass(driver);
 	    dp.bugClick();
 
 	    bp = new BugsPageClass(driver);

@@ -18,25 +18,21 @@ public class DashboardTestClass extends BaseClass {
 	CalenderPageClass cp;
 	BugsPageClass bp;
 
-	@Test
+	@Test(groups = {"Group1"},priority=1)
 	public void verifyCalenderIsClickable() throws IOException {
 		lp = new LoginPageClass(driver);
-
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-
 		cp = dp.calenderClick();
-
 		String actualResult = cp.getTextOfCalender();
 		Assert.assertEquals(actualResult, "Calendar");
 		System.out.println(actualResult);
 
 	}
 
-	@Test
+	@Test(priority=4)
 	public void verifyBugMenuClick() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-		//dp = new DashboardPageClass(driver);
 		bp=dp.bugClick();
 		bp = new BugsPageClass(driver);
 		String actualResult = bp.getTextOfbugs();
@@ -46,22 +42,20 @@ public class DashboardTestClass extends BaseClass {
 
 	}
 
-	@Test
+	@Test(priority=2)
 	public void verifyUrl() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-		dp = new DashboardPageClass(driver);
 		String actualResult = dp.getDashboardUrl();
 		String expectedUrl = ExcelReadUtility.getStringData(1, 0, "DashboardPage");
 		Assert.assertEquals(actualResult, expectedUrl);
 		System.out.println(actualResult);
 	}
 
-	@Test
+	@Test(priority=3)
 	public void verifySearchMenu() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-		dp = new DashboardPageClass(driver);
 		String menuItem = ExcelReadUtility.getStringData(2, 0, "DashboardPage");
 		dp.searchData(menuItem);
 
@@ -74,11 +68,10 @@ public class DashboardTestClass extends BaseClass {
 
 	}
 
-	@Test
+	@Test(priority=5)
 	public void verifyPaymentSalaryNavigation() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-		DashboardPageClass dp = new DashboardPageClass(driver);
 		dp.selectPaymentSalaryFromAddDropdown();
 
 		Assert.assertTrue(driver.getCurrentUrl().contains("/admin/payroll/make_payment"),

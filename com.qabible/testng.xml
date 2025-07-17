@@ -4,14 +4,18 @@
 
 <listeners>
     <listener class-name="retry.RetryListener"/>
+    <listener class-name="extentReport.TestListener"></listener>
 </listeners>
 
+
+
   <test thread-count="5" name="Test">
+   <parameter name="browser" value="chrome"/>
     <classes>
-     <!-- <class name="testClasses.BugsPageTestClass"/>-->
-      <class name="testClasses.LoginPageTestClass"/>
-     <!-- <class name="testClasses.CalenderPageTestClass"/>
-      <class name="testClasses.DashboardTestClass"/>
+    <!--<class name="testClasses.BugsPageTestClass"/>-->
+    <class name="testClasses.LoginPageTestClass"/>
+   <!--  <class name="testClasses.CalenderPageTestClass"/>-->
+      <!--<class name="testClasses.DashboardTestClass"/>
       <class name="testClasses.PromotionPageTestClass"/>-->
     </classes>
   </test> <!-- Test -->

@@ -1,85 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="6" passed="3" failed="0" skipped="0">
+<testng-results ignored="2" total="8" passed="3" failed="0" skipped="3">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-14T09:28:46 IST" name="Default suite" finished-at="2025-07-14T09:28:59 IST" duration-ms="12868">
+  <suite started-at="2025-07-16T15:05:11 IST" name="ParallelTestSuite" finished-at="2025-07-16T15:05:29 IST" duration-ms="18773">
     <groups>
+      <group name="Group1">
+        <method signature="LoginPageTestClass.verifySuccessfullLogin()[pri:1, instance:testClasses.LoginPageTestClass@6a2f6f80]" name="verifySuccessfullLogin" class="testClasses.LoginPageTestClass"/>
+        <method signature="LoginPageTestClass.verifyLogo()[pri:3, instance:testClasses.LoginPageTestClass@6a2f6f80]" name="verifyLogo" class="testClasses.LoginPageTestClass"/>
+        <method signature="LoginPageTestClass.verifySuccessfullLogin()[pri:1, instance:testClasses.LoginPageTestClass@45ca843]" name="verifySuccessfullLogin" class="testClasses.LoginPageTestClass"/>
+        <method signature="LoginPageTestClass.verifyLogo()[pri:3, instance:testClasses.LoginPageTestClass@45ca843]" name="verifyLogo" class="testClasses.LoginPageTestClass"/>
+      </group> <!-- Group1 -->
     </groups>
-    <test started-at="2025-07-14T09:28:46 IST" name="Default test" finished-at="2025-07-14T09:28:59 IST" duration-ms="12868">
+    <test started-at="2025-07-16T15:05:11 IST" name="Test1" finished-at="2025-07-16T15:05:20 IST" duration-ms="8863">
       <class name="testClasses.LoginPageTestClass">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testClasses.LoginPageTestClass@7770f470]" started-at="2025-07-14T09:28:47 IST" name="beforeMethod" finished-at="2025-07-14T09:28:54 IST" duration-ms="6866" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyUnSuccessfullLogin(java.lang.String,java.lang.String)[pri:0, instance:testClasses.LoginPageTestClass@7770f470]" started-at="2025-07-14T09:28:54 IST" name="verifyUnSuccessfullLogin" data-provider="unsuccessfullLogin" finished-at="2025-07-14T09:28:54 IST" duration-ms="559" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testClasses.LoginPageTestClass@6a2f6f80]" started-at="2025-07-16T15:05:11 IST" name="beforeMethod" finished-at="2025-07-16T15:05:19 IST" duration-ms="8776" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin123]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d0f6c142e23efac97388cc8d7c55a1e2, setTimeout {implicit=5000}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.157 (e533e98b126..., userDataDir: C:\Users\MI\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:1485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:1485/devtool..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0f6c142e23efac97388cc8d7c55a1e2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d0f6c142e23efac97388cc8d7c55a1e2, setTimeout {implicit=5000}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.157 (e533e98b126..., userDataDir: C:\Users\MI\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:1485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:1485/devtool..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0f6c142e23efac97388cc8d7c55a1e2
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$1(JdkHttpClient.java:384)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.InterruptedException
+at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:430)
+at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2117)
+at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:935)
+at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:456)
+... 8 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUnSuccessfullLogin -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.LoginPageTestClass@7770f470]" started-at="2025-07-14T09:28:54 IST" name="afterMethod" finished-at="2025-07-14T09:28:54 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifySuccessfullLogin()[pri:1, instance:testClasses.LoginPageTestClass@6a2f6f80]" started-at="2025-07-16T15:05:19 IST" name="verifySuccessfullLogin" finished-at="2025-07-16T15:05:19 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d0f6c142e23efac97388cc8d7c55a1e2, setTimeout {implicit=5000}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.157 (e533e98b126..., userDataDir: C:\Users\MI\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:1485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:1485/devtool..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0f6c142e23efac97388cc8d7c55a1e2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d0f6c142e23efac97388cc8d7c55a1e2, setTimeout {implicit=5000}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.157 (e533e98b126..., userDataDir: C:\Users\MI\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:1485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:1485/devtool..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0f6c142e23efac97388cc8d7c55a1e2
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$1(JdkHttpClient.java:384)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.InterruptedException
+at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:430)
+at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2117)
+at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:935)
+at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:456)
+... 8 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySuccessfullLogin -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.LoginPageTestClass@6a2f6f80]" started-at="2025-07-16T15:05:19 IST" name="afterMethod" finished-at="2025-07-16T15:05:19 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testClasses.LoginPageTestClass@7770f470]" started-at="2025-07-14T09:28:54 IST" name="beforeMethod" finished-at="2025-07-14T09:28:56 IST" duration-ms="1522" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testClasses.LoginPageTestClass@6a2f6f80]" started-at="2025-07-16T15:05:19 IST" name="beforeMethod" finished-at="2025-07-16T15:05:19 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyUnSuccessfullLogin(java.lang.String,java.lang.String)[pri:0, instance:testClasses.LoginPageTestClass@7770f470]" started-at="2025-07-14T09:28:56 IST" name="verifyUnSuccessfullLogin" data-provider="unsuccessfullLogin" finished-at="2025-07-14T09:28:56 IST" duration-ms="551" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin123]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[123456]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="verifyLogo()[pri:3, instance:testClasses.LoginPageTestClass@6a2f6f80]" started-at="2025-07-16T15:05:19 IST" name="verifyLogo" finished-at="2025-07-16T15:05:19 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d0f6c142e23efac97388cc8d7c55a1e2, setTimeout {implicit=5000}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.157 (e533e98b126..., userDataDir: C:\Users\MI\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:1485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:1485/devtool..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0f6c142e23efac97388cc8d7c55a1e2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d0f6c142e23efac97388cc8d7c55a1e2, setTimeout {implicit=5000}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.157 (e533e98b126..., userDataDir: C:\Users\MI\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:1485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:1485/devtool..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0f6c142e23efac97388cc8d7c55a1e2
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$1(JdkHttpClient.java:384)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.InterruptedException
+at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:430)
+at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2117)
+at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:935)
+at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:456)
+... 8 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUnSuccessfullLogin -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.LoginPageTestClass@7770f470]" started-at="2025-07-14T09:28:56 IST" name="afterMethod" finished-at="2025-07-14T09:28:56 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- verifyLogo -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.LoginPageTestClass@6a2f6f80]" started-at="2025-07-16T15:05:19 IST" name="afterMethod" finished-at="2025-07-16T15:05:19 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testClasses.LoginPageTestClass@7770f470]" started-at="2025-07-14T09:28:56 IST" name="beforeMethod" finished-at="2025-07-14T09:28:58 IST" duration-ms="1710" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testClasses.LoginPageTestClass@6a2f6f80]" started-at="2025-07-16T15:05:19 IST" name="beforeMethod" finished-at="2025-07-16T15:05:19 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyUnSuccessfullLogin(java.lang.String,java.lang.String)[pri:0, instance:testClasses.LoginPageTestClass@7770f470]" started-at="2025-07-14T09:28:58 IST" name="verifyUnSuccessfullLogin" data-provider="unsuccessfullLogin" finished-at="2025-07-14T09:28:59 IST" duration-ms="602" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin123]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin123]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="verifyRememberMeCheckbox()[pri:4, instance:testClasses.LoginPageTestClass@6a2f6f80]" started-at="2025-07-16T15:05:19 IST" name="verifyRememberMeCheckbox" finished-at="2025-07-16T15:05:19 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d0f6c142e23efac97388cc8d7c55a1e2, setTimeout {implicit=5000}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.157 (e533e98b126..., userDataDir: C:\Users\MI\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:1485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:1485/devtool..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0f6c142e23efac97388cc8d7c55a1e2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d0f6c142e23efac97388cc8d7c55a1e2, setTimeout {implicit=5000}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.101, chrome: {chromedriverVersion: 138.0.7204.157 (e533e98b126..., userDataDir: C:\Users\MI\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:1485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:1485/devtool..., se:cdpVersion: 138.0.7204.101, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0f6c142e23efac97388cc8d7c55a1e2
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$1(JdkHttpClient.java:384)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.InterruptedException
+at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:430)
+at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2117)
+at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:935)
+at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:456)
+... 8 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUnSuccessfullLogin -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.LoginPageTestClass@7770f470]" started-at="2025-07-14T09:28:59 IST" name="afterMethod" finished-at="2025-07-14T09:28:59 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- verifyRememberMeCheckbox -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.LoginPageTestClass@6a2f6f80]" started-at="2025-07-16T15:05:20 IST" name="afterMethod" finished-at="2025-07-16T15:05:20 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- testClasses.LoginPageTestClass -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test1 -->
+    <test started-at="2025-07-16T15:05:11 IST" name="Test2" finished-at="2025-07-16T15:05:29 IST" duration-ms="18773">
+      <class name="testClasses.LoginPageTestClass">
+        <test-method is-config="true" signature="createReport()[pri:0, instance:testClasses.LoginPageTestClass@45ca843]" started-at="2025-07-16T15:05:10 IST" name="createReport" finished-at="2025-07-16T15:05:11 IST" duration-ms="288" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createReport -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testClasses.LoginPageTestClass@45ca843]" started-at="2025-07-16T15:05:11 IST" name="beforeMethod" finished-at="2025-07-16T15:05:14 IST" duration-ms="2824" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifySuccessfullLogin()[pri:1, instance:testClasses.LoginPageTestClass@45ca843]" started-at="2025-07-16T15:05:14 IST" name="verifySuccessfullLogin" finished-at="2025-07-16T15:05:19 IST" duration-ms="5770" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySuccessfullLogin -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.LoginPageTestClass@45ca843]" started-at="2025-07-16T15:05:19 IST" name="afterMethod" finished-at="2025-07-16T15:05:20 IST" duration-ms="343" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testClasses.LoginPageTestClass@45ca843]" started-at="2025-07-16T15:05:20 IST" name="beforeMethod" finished-at="2025-07-16T15:05:23 IST" duration-ms="3392" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyLogo()[pri:3, instance:testClasses.LoginPageTestClass@45ca843]" started-at="2025-07-16T15:05:23 IST" name="verifyLogo" finished-at="2025-07-16T15:05:23 IST" duration-ms="45" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogo -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.LoginPageTestClass@45ca843]" started-at="2025-07-16T15:05:23 IST" name="afterMethod" finished-at="2025-07-16T15:05:24 IST" duration-ms="1275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testClasses.LoginPageTestClass@45ca843]" started-at="2025-07-16T15:05:24 IST" name="beforeMethod" finished-at="2025-07-16T15:05:28 IST" duration-ms="3340" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyRememberMeCheckbox()[pri:4, instance:testClasses.LoginPageTestClass@45ca843]" started-at="2025-07-16T15:05:28 IST" name="verifyRememberMeCheckbox" finished-at="2025-07-16T15:05:28 IST" duration-ms="461" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRememberMeCheckbox -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.LoginPageTestClass@45ca843]" started-at="2025-07-16T15:05:28 IST" name="afterMethod" finished-at="2025-07-16T15:05:29 IST" duration-ms="1274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testClasses.LoginPageTestClass -->
+    </test> <!-- Test2 -->
+  </suite> <!-- ParallelTestSuite -->
 </testng-results>

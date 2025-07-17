@@ -6,8 +6,9 @@
       <class name="testClasses.LoginPageTestClass">
         <methods>
           <include name="afterMethod"/>
+          <include name="verifySuccessfullLogin"/>
+          <include name="createReport"/>
           <include name="beforeMethod"/>
-          <include name="verifyUnSuccessfullLogin"/>
         </methods>
       </class> <!-- testClasses.LoginPageTestClass -->
     </classes>
