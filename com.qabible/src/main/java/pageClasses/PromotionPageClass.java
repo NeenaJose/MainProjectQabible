@@ -41,9 +41,10 @@ public class PromotionPageClass {
 	@FindBy(xpath = "(//a[@href='https://erp.qabible.in/admin/promotion'])[2]") WebElement promotionHeader;
 
 	// Click on Promotion menu
-	public void promotionClick() {
+	public PromotionPageClass promotionClick() {
 		wu.waitForElementToBeClickableByWebElement(driver, promotion, 5);
 		promotion.click();
+		return this;
 	}
 	
 	public boolean isPromotionHeaderVisible() {
@@ -51,9 +52,10 @@ public class PromotionPageClass {
 	}
 
 	// Click on New Promotion
-	public void newPromotionClick() {
+	public PromotionPageClass newPromotionClick() {
 		wu.waitForElementToBeClickableByWebElement(driver, newPromotion, 5);
 		newPromotion.click();
+		return this;
 	}
 
 	public boolean addNewPromotion(String title, String date, String designation) {

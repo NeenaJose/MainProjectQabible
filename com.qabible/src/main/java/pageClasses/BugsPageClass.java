@@ -26,7 +26,7 @@ public class BugsPageClass {
 	WebElement newBugs;
 	@FindBy(name = "bug_title")
 	WebElement bugTitle;
-	@FindBy(name = "issue_no")
+	@FindBy(xpath = "//label[contains(text(),'Issue #')]")
 	WebElement issue;
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement saveButton;
@@ -38,26 +38,19 @@ public class BugsPageClass {
 		return glu.getTextOfElement(bugs);
 	}
 
-	public void newBugs() {
+	public BugsPageClass newBugs() {
 		wu.waitForElementToBeClickableByWebElement(driver, newBugs, 5);
 		newBugs.click();
+		return this;
 	}
 	
-	public void addNewBug(String issueNo, String title) {
-		wu.waitForElementToBeVisibleByWebElement(driver, issue, 5);
-		issue.clear();
-		issue.sendKeys(issueNo);
-
-		bugTitle.sendKeys(title);
-
-		saveButton.click();
+	
+	public boolean isIssueFieldVisible() {
+		return glu.isElementDisplayed(issue);
 	}
 
-	public boolean isBugPresent(String expectedTitle) {
-		wu.waitForElementToBeVisibleByWebElement(driver, bugTable, 5);
-		String tableText = bugTable.getText();
-		System.out.println("Looking for bug title: " + expectedTitle);
-		return tableText.contains(expectedTitle);
-	}
+	
+	
+	
 
 }

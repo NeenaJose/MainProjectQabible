@@ -17,19 +17,17 @@ public class BugsPageTestClass extends BaseClass{
 	DashboardPageClass dp;
 	LoginPageClass lp;
 	
-	@Test(enabled = false)
-	public void verifybugAddition() throws IOException {
+	@Test
+	public void verifyAddNewbugClickIsNavigatingToNewPage() throws IOException {
 	    lp = new LoginPageClass(driver);
 		dp=lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-	    dp.bugClick();
+	    bp=dp.bugClick();
 
-	    bp = new BugsPageClass(driver);
-	    bp.newBugs();
-
-	    String bugTitle = RandomDataUtility.getBugTitle();
-	    bp.addNewBug("TestIssue", bugTitle);
-
-	    Assert.assertTrue(bp.isBugPresent(bugTitle), "Bug was not added successfully");
+	    bp =  bp.newBugs();
+	 
+	    Assert.assertTrue(bp.isIssueFieldVisible(), "'Issue #' field is not visible on New Bug page");
+	    System.out.println("'Issue #' field is displayed.");
+	 
 	}
 	
 

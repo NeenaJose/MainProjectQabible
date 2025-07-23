@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="crossBrowserSuite">
-  <test name="Chrome Test">
-  <parameter name="browser" value="chrome"/>
-    <classes>
-    <!-- <class name="testClasses.BugsPageTestClass"/>--> 
-      <class name="testClasses.LoginPageTestClass"/>
-   <!--    <class name="testClasses.CalenderPageTestClass"/>
-      <class name="testClasses.PromotionPageTestClass"/>
-      <class name="testClasses.DashboardTestClass"/>-->
-    </classes>
-  </test> <!-- Test -->
-  
-   <test name="Edge Test">
-   <parameter name="browser" value="edge"/>
-    <classes>
-  <!--    <class name="testClasses.BugsPageTestClass"/> -->
-      <class name="testClasses.LoginPageTestClass"/>
-    <!--  <class name="testClasses.CalenderPageTestClass"/>
-      <class name="testClasses.PromotionPageTestClass"/>
-      <class name="testClasses.DashboardTestClass"/>-->
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- crossBrowserSuite -->
+
+	<listeners>
+		<listener class-name="retry.RetryListener" />
+		<listener class-name="extentReport.TestListener"></listener>
+	</listeners>
+
+	<test name="Chrome Test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="testClasses.LoginPageTestClass" />
+			<class name="testClasses.DashboardTestClass" />
+			<class name="testClasses.CalenderPageTestClass" />
+			<class name="testClasses.BugsPageTestClass" />
+			<class name="testClasses.PromotionPageTestClass" />
+		</classes>
+	</test> <!--
+	Test -->
+
+	<test name="Edge Test">
+		<parameter name="browser" value="edge" />
+		<classes>
+			<class name="testClasses.LoginPageTestClass" />
+			<class name="testClasses.DashboardTestClass" />
+			<class name="testClasses.CalenderPageTestClass" />
+			<class name="testClasses.BugsPageTestClass" />
+			<class name="testClasses.PromotionPageTestClass" />
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+crossBrowserSuite -->

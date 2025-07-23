@@ -9,7 +9,7 @@ public class RetryAnalyser implements IRetryAnalyzer{
 	private static final int maxRetryCount = 3;
 	
 	@Override
-	public boolean retry(ITestResult result) {
+	public boolean retry(ITestResult result) { //ITestResult is an interface provided by TestNG.
 		if(initialRetryCount<maxRetryCount) {
 			initialRetryCount++;
 			return true;

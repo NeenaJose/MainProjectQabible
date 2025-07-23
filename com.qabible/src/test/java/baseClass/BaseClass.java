@@ -27,7 +27,7 @@ public class BaseClass {
 	
 	public static void readProperty() throws IOException{
 		property=new Properties();
-		FileInputStream file=new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\config.properties");
+		FileInputStream file=new FileInputStream(System.getProperty("user.dir")+ConstantsClass.propertiesFilePath);
 		property.load(file);
 		
 	}
@@ -59,6 +59,7 @@ public class BaseClass {
 	driver.quit();
   }
   
+  //It initializes the ExtentReport before the test suite starts.
   @BeforeSuite(alwaysRun = true)
 	public void createReport() {
 		ExtentManager.createInstance();

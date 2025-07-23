@@ -28,6 +28,8 @@ public DashboardPageClass(WebDriver driver) {
 @FindBy(id = "s-menu") WebElement search;
 @FindBy(xpath = "//i[@class='fa fa-plus-circle']") WebElement addButton;
 @FindBy(xpath = "//a[contains(text(),'Payment salary')]") WebElement paymentSalaryOption;
+@FindBy(xpath = "//em[@class='icon-bell']") WebElement notification;
+@FindBy(xpath = "//li[@class='text-center']") WebElement notificationText;
 
 
 public String getTextOfDashboard() {
@@ -66,6 +68,25 @@ public void selectPaymentSalaryFromAddDropdown() {
     wu.waitForElementToBeClickableByWebElement(driver, paymentSalaryOption, 5);
     paymentSalaryOption.click();
 }
+
+public void clickBellIcon() {
+	notification.click();
+}
+
+// Method to get the 'no notification' text
+public String getNoNotificationMessage() {
+  
+    wu.waitForElementToBeVisibleByWebElement(driver, notificationText, 5);
+    return notificationText.getText().trim();
+}
+
+// Method to check if notification message is displayed
+public boolean isNoNotificationDisplayed() {
+   wu.waitForElementToBeVisibleByWebElement(driver, notificationText, 5);
+    return notificationText.isDisplayed();
+}
+
+
 
 
 

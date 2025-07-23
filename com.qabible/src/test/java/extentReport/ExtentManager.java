@@ -15,6 +15,7 @@ public class ExtentManager {
     private static String macReportFileLoc = macPath + "/" + reportFileName;
     private static String winReportFileLoc = windowsPath + "\\" + reportFileName;
 
+    //create, configure, and provide a single instance of the ExtentReports object
     public static ExtentReports getInstance() {
         if (extent == null)
             createInstance();

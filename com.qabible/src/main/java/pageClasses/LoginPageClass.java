@@ -14,12 +14,13 @@ public class LoginPageClass {
 	WebDriver driver;
 	GeneralUtilities glu= new GeneralUtilities(); 
 	WaitUtility wu= new WaitUtility();
+	
 	public LoginPageClass(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 
 	}
-	
+	//PageFactory annotation in Selenium used to locate a web element
 	@FindBy(name = "user_name") WebElement username;
 	@FindBy(name = "password") WebElement password;
 	@FindBy(xpath = "(//button[@type='submit'])[1]") WebElement signin;
@@ -36,6 +37,13 @@ public class LoginPageClass {
 		return new DashboardPageClass(driver);	
 	}
 	
+	public LoginPageClass loginChaining(String uname,String pass) {
+		username.sendKeys(uname);
+		password.sendKeys(pass);
+		wu.waitForElementToBeClickableByWebElement(driver, signin, 5);
+		signin.click();
+		return this;	
+	}
 	public String getTextOfErrorMessage() {
 	    wu.waitForElementToBeVisibleByWebElement(driver, errorMessage, 5);
 	    return errorMessage.getText();

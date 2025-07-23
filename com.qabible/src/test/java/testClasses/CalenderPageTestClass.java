@@ -16,11 +16,10 @@ public class CalenderPageTestClass extends BaseClass{
 	LoginPageClass lp;
 	DashboardPageClass dp;
   @Test
-  public void verifyCalenderTitle() throws IOException {
+  public void verifyCalenderTitleIsPresent() throws IOException {
 	  lp=new LoginPageClass(driver);
 	  dp=lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-	  dp.calenderClick();
-	  cp = new CalenderPageClass(driver);
+	  cp =  dp.calenderClick();
 	  String actualResult= cp.getTitle();
 	  String expectedResult=ExcelReadUtility.getStringData(1, 0, "CalenderPage");
 	  Assert.assertEquals(actualResult, expectedResult);

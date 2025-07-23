@@ -19,7 +19,7 @@ public class DashboardTestClass extends BaseClass {
 	BugsPageClass bp;
 
 	@Test(groups = {"Group1"},priority=1)
-	public void verifyCalenderIsClickable() throws IOException {
+	public void verifyCalenderMenuIsClickable() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
 		cp = dp.calenderClick();
@@ -30,7 +30,7 @@ public class DashboardTestClass extends BaseClass {
 	}
 
 	@Test(priority=4)
-	public void verifyBugMenuClick() throws IOException {
+	public void verifyBugMenuIsClickable() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
 		bp=dp.bugClick();
@@ -42,18 +42,21 @@ public class DashboardTestClass extends BaseClass {
 
 	}
 
-	@Test(priority=2)
-	public void verifyUrl() throws IOException {
-		lp = new LoginPageClass(driver);
-		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-		String actualResult = dp.getDashboardUrl();
-		String expectedUrl = ExcelReadUtility.getStringData(1, 0, "DashboardPage");
-		Assert.assertEquals(actualResult, expectedUrl);
-		System.out.println(actualResult);
-	}
+	
+	
+	 @Test(priority=2)
+	    public void verifyNoNotificationDisplayedOnBellClick() throws IOException {
+		 lp = new LoginPageClass(driver);
+			dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
+			dp.clickBellIcon();
+
+	        // Validate notification message
+	        Assert.assertTrue(dp.isNoNotificationDisplayed(), "Notification message not displayed");
+	        Assert.assertEquals(dp.getNoNotificationMessage(), "There is no notification", "Incorrect message");
+	    }
 
 	@Test(priority=3)
-	public void verifySearchMenu() throws IOException {
+	public void verifySearchMenuDisplaysSearchData() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
 		String menuItem = ExcelReadUtility.getStringData(2, 0, "DashboardPage");
@@ -69,7 +72,7 @@ public class DashboardTestClass extends BaseClass {
 	}
 
 	@Test(priority=5)
-	public void verifyPaymentSalaryNavigation() throws IOException {
+	public void verifyPaymentSalaryNavigationIsWorking() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
 		dp.selectPaymentSalaryFromAddDropdown();

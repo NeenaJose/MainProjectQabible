@@ -65,7 +65,7 @@
 				<version>3.0.0-M7</version>
 				<configuration>
 					<suiteXmlFiles>
-						<file>grouping.xml</file>
+						<file>crossBrowser.xml</file>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
