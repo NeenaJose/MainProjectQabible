@@ -23,7 +23,7 @@ public class BugsPageTestClass extends BaseClass {
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),
 				ExcelReadUtility.getIntData(0, 1, "LoginPage"));
 		bp = dp.bugMenuClick();
-		bp = bp.newBugsMenuClick();
+		bp.newBugsMenuClick();
 		Assert.assertTrue(bp.isIssueFieldVisible(), "'Issue #' field is not visible on New Bug page");
 		System.out.println("'Issue #' field is displayed.");
 
