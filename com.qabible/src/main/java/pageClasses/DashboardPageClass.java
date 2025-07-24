@@ -30,6 +30,7 @@ public DashboardPageClass(WebDriver driver) {
 @FindBy(xpath = "//a[contains(text(),'Payment salary')]") WebElement paymentSalaryOption;
 @FindBy(xpath = "//em[@class='icon-bell']") WebElement notification;
 @FindBy(xpath = "//li[@class='text-center']") WebElement notificationText;
+@FindBy(xpath = "//a[@title='Promotion']") WebElement promotion;
 
 
 public String getTextOfDashboard() {
@@ -42,13 +43,13 @@ public String getDashboardUrl() {
 	
 }
 
-public CalenderPageClass calenderClick() {
+public CalenderPageClass calenderMenuClick() {
     wu.waitForElementToBeClickableByWebElement(driver, calender, 5);
     calender.click();
     return new CalenderPageClass(driver);
 }
 
-public BugsPageClass bugClick() {
+public BugsPageClass bugMenuClick() {
 	wu.waitForElementToBeClickableByWebElement(driver,bug , 5);
 	bug.click();
 	return new BugsPageClass(driver);
@@ -86,7 +87,12 @@ public boolean isNoNotificationDisplayed() {
     return notificationText.isDisplayed();
 }
 
-
+// Click on Promotion menu
+public PromotionPageClass promotionMenuClick() {
+	wu.waitForElementToBeClickableByWebElement(driver, promotion, 5);
+	promotion.click();
+	return new PromotionPageClass(driver);
+}
 
 
 

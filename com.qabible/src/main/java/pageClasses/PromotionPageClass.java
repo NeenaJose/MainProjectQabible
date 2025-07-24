@@ -20,73 +20,71 @@ public class PromotionPageClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	
-	@FindBy(xpath = "//a[@title='Promotion']") WebElement promotion;
+	@FindBy(xpath = "//a[@title='Promotion']")
+	WebElement promotion;
 
-	@FindBy(xpath = "//a[@href='https://erp.qabible.in/admin/promotion/new_promotion']") WebElement newPromotion;
-	
-	@FindBy(id = "select2-user_id-wx-container") WebElement employeeNameDropdown;
+	@FindBy(xpath = "//a[@href='https://erp.qabible.in/admin/promotion/new_promotion']")
+	WebElement newPromotion;
+
+	@FindBy(id = "select2-user_id-wx-container")
+	WebElement employeeNameDropdown;
 	By employeeOptions = By.xpath("//ul[@class='select2-results__options']/li[not(contains(@class, 'loading'))]");
 
-	@FindBy(xpath = "//span[starts-with(@id,'select2-designation_id') and contains(@class,'select2-selection__rendered')]") WebElement designationDropdown;
+	@FindBy(xpath = "//span[starts-with(@id,'select2-designation_id') and contains(@class,'select2-selection__rendered')]")
+	WebElement designationDropdown;
 
-	@FindBy(name = "promotion_title") WebElement promotionTitle;
+	@FindBy(name = "promotion_title")
+	WebElement promotionTitle;
 
-	@FindBy(name = "promotion_date") WebElement promotionDate;
+	@FindBy(name = "promotion_date")
+	WebElement promotionDate;
 
-	@FindBy(xpath = "//button[text()='Save']") WebElement saveButton;
-	
-	@FindBy(xpath = "//input[@class='select2-search__field']") WebElement designationInput;
-	
-	@FindBy(xpath = "(//a[@href='https://erp.qabible.in/admin/promotion'])[2]") WebElement promotionHeader;
+	@FindBy(xpath = "//button[text()='Save']")
+	WebElement saveButton;
 
-	// Click on Promotion menu
-	public PromotionPageClass promotionClick() {
-		wu.waitForElementToBeClickableByWebElement(driver, promotion, 5);
-		promotion.click();
-		return this;
-	}
-	
+	@FindBy(xpath = "//input[@class='select2-search__field']")
+	WebElement designationInput;
+
+	@FindBy(xpath = "(//a[@href='https://erp.qabible.in/admin/promotion'])[2]")
+	WebElement promotionHeader;
+
 	public boolean isPromotionHeaderVisible() {
-	    return promotionHeader.isDisplayed();
+		return promotionHeader.isDisplayed();
 	}
 
 	// Click on New Promotion
-	public PromotionPageClass newPromotionClick() {
+	public PromotionPageClass newPromotionMenuClick() {
 		wu.waitForElementToBeClickableByWebElement(driver, newPromotion, 5);
 		newPromotion.click();
 		return this;
 	}
 
 	public boolean addNewPromotion(String title, String date, String designation) {
-	    wu.waitForElementToBeVisibleByWebElement(driver, promotionTitle, 5);
-	    promotionTitle.sendKeys(title);
+		wu.waitForElementToBeVisibleByWebElement(driver, promotionTitle, 5);
+		promotionTitle.sendKeys(title);
 
-	    wu.waitForElementToBeVisibleByWebElement(driver, designationDropdown, 5);
-	    designationDropdown.click();
+		wu.waitForElementToBeVisibleByWebElement(driver, designationDropdown, 5);
+		designationDropdown.click();
 
-	    wu.waitForElementToBeVisibleByWebElement(driver, designationInput, 5);
-	    designationInput.sendKeys(designation);
-	    designationInput.sendKeys(Keys.ENTER);
+		wu.waitForElementToBeVisibleByWebElement(driver, designationInput, 5);
+		designationInput.sendKeys(designation);
+		designationInput.sendKeys(Keys.ENTER);
 
-	    wu.waitForElementToBeVisibleByWebElement(driver, promotionDate, 5);
-	    promotionDate.sendKeys(date);
-	    promotionDate.sendKeys(Keys.TAB);
+		wu.waitForElementToBeVisibleByWebElement(driver, promotionDate, 5);
+		promotionDate.sendKeys(date);
+		promotionDate.sendKeys(Keys.TAB);
 
-	    wu.waitForElementToBeClickableByWebElement(driver, saveButton, 5);
-	    saveButton.click();
+		wu.waitForElementToBeClickableByWebElement(driver, saveButton, 5);
+		saveButton.click();
 
-	  
-	    boolean isAlertPresent = wu.isAlertPresent(driver, 3);
-	    if (isAlertPresent) {
-	        Alert alert = driver.switchTo().alert();
-	        System.out.println("🚨 Alert: " + alert.getText());
-	        alert.accept();
-	        return false;
-	    }
-	    return true;
+		boolean isAlertPresent = wu.isAlertPresent(driver, 3);
+		if (isAlertPresent) {
+			Alert alert = driver.switchTo().alert();
+			System.out.println("Alert: " + alert.getText());
+			alert.accept();
+			return false;
+		}
+		return true;
 	}
 
-
-	}
-
+}

@@ -26,7 +26,7 @@ public CalenderPageClass(WebDriver driver) {
 		return glu.getTextOfElement(calender);
 	}
 	
-	public String getTitle() {
+	public String getTitleOfCalenderPage() {
 		return glu.getPageTitle(driver);
 		
 	}

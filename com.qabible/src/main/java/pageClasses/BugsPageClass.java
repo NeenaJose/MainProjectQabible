@@ -38,7 +38,7 @@ public class BugsPageClass {
 		return glu.getTextOfElement(bugs);
 	}
 
-	public BugsPageClass newBugs() {
+	public BugsPageClass newBugsMenuClick() {
 		wu.waitForElementToBeClickableByWebElement(driver, newBugs, 5);
 		newBugs.click();
 		return this;

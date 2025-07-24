@@ -22,7 +22,7 @@ public class DashboardTestClass extends BaseClass {
 	public void verifyCalenderMenuIsClickable() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-		cp = dp.calenderClick();
+		cp = dp.calenderMenuClick();
 		String actualResult = cp.getTextOfCalender();
 		Assert.assertEquals(actualResult, "Calendar");
 		System.out.println(actualResult);
@@ -33,8 +33,7 @@ public class DashboardTestClass extends BaseClass {
 	public void verifyBugMenuIsClickable() throws IOException {
 		lp = new LoginPageClass(driver);
 		dp = lp.login(ExcelReadUtility.getStringData(0, 0, "LoginPage"),ExcelReadUtility.getIntData(0, 1, "LoginPage"));
-		bp=dp.bugClick();
-		bp = new BugsPageClass(driver);
+		bp=dp.bugMenuClick();
 		String actualResult = bp.getTextOfbugs();
 		String expectedResult = ExcelReadUtility.getStringData(2, 0, "DashboardPage");
 		Assert.assertEquals(actualResult, expectedResult);

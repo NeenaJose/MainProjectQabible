@@ -37,7 +37,7 @@ public class LoginPageClass {
 		return new DashboardPageClass(driver);	
 	}
 	
-	public LoginPageClass loginChaining(String uname,String pass) {
+	public LoginPageClass invalidLogin(String uname,String pass) {
 		username.sendKeys(uname);
 		password.sendKeys(pass);
 		wu.waitForElementToBeClickableByWebElement(driver, signin, 5);
@@ -52,7 +52,7 @@ public class LoginPageClass {
 	    return glu.isElementDisplayed(logo);
 	}
 	
-	public boolean rememberMe() {
+	public boolean rememberMeCheckboxSelection() {
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("arguments[0].checked = true;", checkbox);
 
